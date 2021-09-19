@@ -1,0 +1,127 @@
+@use "_mixins" as *;
+@use "_variables" as *;
+
+
+.about {
+    
+    @include breakpoint-up (medium) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        img {
+            height: 100%;
+        }
+
+        .tyb,
+        .sotra {
+            display: grid;
+            align-items: center;
+
+            h2, p {
+                margin: 0;
+            }
+        }
+
+        a {
+            
+            &::after {
+                margin: 1;
+                padding: 0 4rem;
+            }
+        }
+    }
+    
+    @include breakpoint-up (xlarge) {
+        
+        a {
+            
+            &::after {
+                padding: .4rem 5.5rem;
+            }
+        }
+    }
+    
+    h2, p {
+        margin: 1rem;
+        padding: 1.5rem;
+        text-align: center;
+        
+    }
+    
+    a {
+        display: flex;
+        margin: 1rem;
+        padding: 1rem;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        color: $Verydarkdesaturatedblue;
+        justify-content: center;
+        
+        &::after {
+            content: '';
+            width: 6.3rem;
+            height: .5rem;
+            position: absolute;
+            margin-top: 0.8rem;
+            border-radius: 3rem;
+            opacity: 40%;
+            z-index: -1;
+        }
+    }
+
+    .tyb {
+        a::after {
+            background-color: $Yellow;
+        }
+    }
+
+    .sotra {
+        a::after {
+            background-color: $Softred;
+        }
+    }
+
+    .gd {
+        background-image: url(../../images/mobile/image-graphic-design.jpg);
+        background-position: center;
+        background-size: cover;
+        padding-top: 90%;
+
+        @include breakpoint-up (medium) {
+            background-image: url(../../images/desktop/image-graphic-design.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        h2, p {
+            margin: 0;
+            color: $Darkdesaturatedcyan;
+        }
+        
+        p {
+            padding-bottom: 3rem;
+        }
+    }
+
+    .ph {
+        background-image: url(../../images/mobile/image-photography.jpg);
+        background-size: cover;
+        padding-top: 90%;
+
+        @include breakpoint-up (medium) {
+            background-image: url(../../images/desktop/image-photography.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        h2, p{
+            margin: 0;
+            color: $Darkblue;
+        }
+        
+        p {
+            padding-bottom: 3rem;
+        }
+    }
+}

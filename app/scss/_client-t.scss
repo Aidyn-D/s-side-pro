@@ -1,0 +1,35 @@
+@use "_mixins" as *;
+@use "_variables" as *;
+
+
+.client-testimonials {
+    margin: 1rem;
+    text-align: center;
+
+    h3, h5 {
+        color: $Grayishblue;
+    }
+    
+    .cards {
+
+        @include breakpoint-up (medium) {
+            display: flex;
+        }
+    }
+    .card {
+        margin: 3rem 0;
+
+        img {
+            width: 5rem;
+            border-radius: 50%;
+        }
+
+        p {
+            margin: 2rem;
+            color: $Verydarkgrayishblue;
+        }
+        h4, h5 {
+            margin: .5rem;
+        }
+    }
+}

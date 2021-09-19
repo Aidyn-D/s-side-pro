@@ -1,0 +1,60 @@
+@use "_mixins" as *;
+@use "_variables" as *;
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap');
+
+html {
+  font-size: 100%;
+  line-height: 1.5;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  
+}
+
+.container {
+  display: grid;
+
+  @include breakpoint-up (medium) {
+    font-size: large;
+
+    .hide-for-desktop {
+      display: none;
+    }
+  }
+
+  @include breakpoint-up (xlarge) {
+    font-size: 170%;
+  }
+
+  @include breakpoint-down (small) {
+
+    .hide-for-mobile {
+      display: none;
+    }
+  }
+}
+
+h1, h2,
+h3, h4, a {
+  font-family: 'Fraunces', serif;  
+}
+
+p, h5 {
+  font-family: 'Barlow', sans-serif;
+}
+img {
+  width: 100%;
+}

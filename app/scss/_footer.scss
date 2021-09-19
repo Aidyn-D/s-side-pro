@@ -1,0 +1,46 @@
+@use "_mixins" as *;
+@use "_variables" as *;
+
+
+.footer {
+    background-color: $Darkmoderatecyan;
+    text-align: center;
+
+    .ft-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        @include breakpoint-up (medium) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .foot {
+        padding: 1rem;
+        
+        h2 {
+            margin-bottom: 2rem;
+            color: $Verydarkdesaturatedblue;
+        }
+        
+        a {
+            margin: 1rem;
+            padding: 1rem 0;
+            text-decoration: none;
+            color: $Darkdesaturatedcyan;
+            font-family: 'Barlow', sans-serif;
+        }
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        img {
+            width: 1.2rem;
+            margin: 2rem 1rem;
+            padding-bottom: 2rem;
+        }
+    }
+}

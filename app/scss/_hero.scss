@@ -1,0 +1,117 @@
+@use "_mixins" as *;
+@use "_variables" as *;
+
+
+.nav {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    background-color: #3DBEFF;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+
+    .mobile-menu {
+        width: 90%;
+        padding: 1rem;
+        position: absolute;
+        top: 100%;
+        list-style: none;
+        background: $White;
+        
+        li {
+            margin: 1rem;
+            padding-bottom: .5rem;
+            text-align: center;
+        }
+        
+        a {
+            font-family: 'Barlow', sans-serif;
+            text-decoration: none;
+            color: $Darkgrayishblue;
+        }
+        
+        #contact {
+            padding: 1rem 2rem;
+            background-color: $Yellow;
+            color: black;
+            border-radius: 4rem;
+            transition: all ease-in-out 250ms;
+    
+            &:hover {
+                background-color: hsla(51, 100%, 49%, 0.45);
+                color: rgba(0, 0, 0, 0.45);
+            }
+        }
+    }
+
+    @include breakpoint-up (medium) {
+
+        ul {
+            margin: 0;
+            display: flex;
+            list-style: none;
+            
+            a {
+                font-family: 'Barlow', sans-serif;
+                margin: 0 .6rem;
+                text-decoration: none;
+                color: $White;
+            }
+        }
+        
+        #contact {
+            padding: .5rem 1rem;
+            background-color: $White;
+            color: black;
+            border-radius: 4rem;
+            transition: all ease-in-out 250ms;
+    
+            &:hover {
+                color: $White;
+                background-color: hsla(0, 0, 100%, 0.45);
+            }
+        }
+    }
+}
+
+
+.hero {
+    display: grid;
+    grid-template-areas: 
+        "image image image" 
+        "title title title" 
+        "arrow arrow arrow"
+        "image-o image-o image-o";
+
+    .hero-img {
+        grid-column: 1 / -1;
+        grid-row: image / image-o;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    h1 {
+        margin: 1rem 8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: title;
+        color: $White;
+        font-weight: 900;
+        font-size: xx-large;
+        text-align: center;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: arrow;
+        
+        img {
+            width: min-content;
+        }
+    }
+}
