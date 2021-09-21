@@ -20,15 +20,24 @@
         
         h2 {
             margin-bottom: 2rem;
-            color: $Verydarkdesaturatedblue;
+
+            a {
+                color: $Verydarkdesaturatedblue;
+
+            }
         }
-        
+
         a {
             margin: 1rem;
             padding: 1rem 0;
             text-decoration: none;
             color: $Darkdesaturatedcyan;
             font-family: 'Barlow', sans-serif;
+            transition: all ease-in 250ms;
+
+            &:hover {
+                color: $White;
+            }
         }
     }
 
@@ -36,11 +45,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-bottom: 2rem;
         
         img {
             width: 1.2rem;
             margin: 2rem 1rem;
-            padding-bottom: 2rem;
+            transition: all ease-in 250ms;
+
+            &:hover {
+                background-color: $White;
+            }
         }
     }
 }

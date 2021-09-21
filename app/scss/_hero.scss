@@ -12,42 +12,56 @@
     align-items: center;
     z-index: 99;
 
-    .mobile-menu {
-        width: 90%;
-        padding: 1rem;
-        position: absolute;
-        top: 100%;
-        list-style: none;
-        background: $White;
-        
-        li {
-            margin: 1rem;
-            padding-bottom: .5rem;
-            text-align: center;
-        }
-        
-        a {
-            font-family: 'Barlow', sans-serif;
-            text-decoration: none;
-            color: $Darkgrayishblue;
-        }
-        
-        #contact {
-            padding: 1rem 2rem;
-            background-color: $Yellow;
-            color: black;
-            border-radius: 4rem;
+    @include breakpoint-down(small) {
+        .mobile-menu {
+            width: 90%;
+            padding: 1rem;
+            position: absolute;
+            top: 100%;
+            list-style: none;
+            background: $White;
             transition: all ease-in-out 250ms;
-    
-            &:hover {
-                background-color: hsla(51, 100%, 49%, 0.45);
-                color: rgba(0, 0, 0, 0.45);
+            
+            &::before {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: -12%;
+                border-bottom: 2rem solid $White;
+                border-left: 2rem solid transparent;
+            }
+
+            li {
+                margin: 1rem;
             }
         }
     }
 
-    @include breakpoint-up (medium) {
+    li {
+        text-align: center;
+    }
+    
+    a {
+        font-family: 'Barlow', sans-serif;
+        text-decoration: none;
+        color: $Darkgrayishblue;
+    }
+    
+    #contact {
+        padding: 1rem 2rem;
+        background-color: $Yellow;
+        color: black;
+        border-radius: 4rem;
+        transition: all ease-in-out 250ms;
 
+        &:hover {
+            background-color: hsla(51, 100%, 49%, 0.45);
+            color: rgba(0, 0, 0, 0.45);
+        }
+    }
+    
+    @include breakpoint-up (medium) {
+        
         ul {
             margin: 0;
             display: flex;
