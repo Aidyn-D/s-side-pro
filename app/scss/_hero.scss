@@ -45,6 +45,10 @@
         font-family: 'Barlow', sans-serif;
         text-decoration: none;
         color: $Darkgrayishblue;
+
+        &:hover {
+            color: $Grayishblue;
+        }
     }
     
     #contact {

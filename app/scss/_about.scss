@@ -28,6 +28,10 @@
                 margin: 1;
                 padding: 0 4rem;
             }
+
+            &:hover {
+                color: $Grayishblue;
+            }
         }
     }
     
@@ -37,6 +41,10 @@
             
             &::after {
                 padding: .4rem 5.5rem;
+            }
+
+            &:hover {
+                color: $Grayishblue;
             }
         }
     }

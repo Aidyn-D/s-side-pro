@@ -15,6 +15,8 @@ html {
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
@@ -91,6 +93,9 @@ img {
   font-family: "Barlow", sans-serif;
   text-decoration: none;
   color: #818498;
+}
+.nav a:hover {
+  color: #a7abae;
 }
 .nav #contact {
   padding: 1rem 2rem;
@@ -181,10 +186,16 @@ img {
     margin: 1;
     padding: 0 4rem;
   }
+  .about a:hover {
+    color: #a7abae;
+  }
 }
 @media (min-width: 87.5em) {
   .about a::after {
     padding: 0.4rem 5.5rem;
+  }
+  .about a:hover {
+    color: #a7abae;
   }
 }
 .about h2, .about p {
@@ -330,7 +341,7 @@ img {
   transition: all ease-in 250ms;
 }
 .footer .social img:hover {
-  background-color: white;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(143deg) brightness(120%) contrast(101%);
 }
 
 /*# sourceMappingURL=/js.55b70bcf.css.map */
